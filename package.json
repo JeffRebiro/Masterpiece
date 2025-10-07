@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "nodemon backend/server.js",
     "start": "node backend/server.js",
-    "build-client": "cd frontend && npm run build",
-    "install-all": "cd backend && npm install && cd ../frontend && npm install"
+    "build": "cd frontend && npm install && npm run build",
+    "install-all": "npm install && cd frontend && npm install"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -20,5 +20,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
