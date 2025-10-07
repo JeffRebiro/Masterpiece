@@ -1,0 +1,147 @@
+
+const products = [
+  {
+    name: "Wireless Headphones",
+    image: "/images/headphones.jpg",
+    description: "Noise-cancelling over-ear headphones with high-fidelity audio.",
+    category: "Electronics",
+    brand: "SoundWave",
+    rating: 4.5,
+    price: 120.99,
+  },
+  {
+    name: "Smartwatch Pro",
+    image: "/images/watch.jpg",
+    description: "Track your health, fitness, and notifications all day long.",
+    category: "Wearables",
+    brand: "TimeTech",
+    rating: 4.0,
+    price: 89.99,
+  },
+  {
+    name: "Running Shoes",
+    image: "/images/shoes.jpg",
+    description: "Lightweight, breathable shoes designed for maximum comfort.",
+    category: "Footwear",
+    brand: "SpeedRun",
+    rating: 4.7,
+    price: 59.99,
+  },
+  {
+    name: "4K LED TV",
+    image: "/images/tv.jpg",
+    description: "Experience stunning visuals with this 50-inch Ultra HD Smart TV.",
+    category: "Electronics",
+    brand: "ViewMax",
+    rating: 4.3,
+    price: 399.99,
+  },
+  {
+    name: "Gaming Keyboard",
+    image: "/images/keyboard.jpg",
+    description: "RGB mechanical keyboard with responsive tactile switches.",
+    category: "Accessories",
+    brand: "KeyZone",
+    rating: 4.6,
+    price: 74.99,
+  },
+  {
+    name: "Bluetooth Speaker",
+    image: "/images/speaker.jpeg",
+    description: "Compact and powerful speaker with deep bass and 10-hour battery life.",
+    category: "Electronics",
+    brand: "BeatBoom",
+    rating: 4.4,
+    price: 45.99,
+  },
+  {
+    name: "Fitness Tracker Band",
+    image: "/images/tracker.jpeg",
+    description: "Keep track of your steps, heart rate, and sleep patterns.",
+    category: "Wearables",
+    brand: "HealthPulse",
+    rating: 4.2,
+    price: 34.99,
+  },
+  {
+    name: "Drone 1080p",
+    image: "/images/drone.jpeg",
+    description: "Capture aerial views with this beginner-friendly drone and HD camera.",
+    category: "Gadgets",
+    brand: "SkyView",
+    rating: 4.1,
+    price: 129.99,
+  },
+  {
+    name: "Ergonomic Office Chair",
+    image: "/images/chair.jpeg",
+    description: "Comfortable mesh chair with lumbar support and adjustable height.",
+    category: "Furniture",
+    brand: "SitRight",
+    rating: 4.6,
+    price: 189.99,
+  },
+  {
+
+    name: "Digital Camera",
+    image: "/images/camera.jpeg",
+    description: "20MP camera with 4x optical zoom and HD video recording.",
+    category: "Photography",
+    brand: "PhotoPro",
+    rating: 4.3,
+    price: 149.99,
+  },
+  {
+
+    name: "Electric Kettle",
+    image: "/images/kettle.jpeg",
+    description: "1.7L stainless steel kettle with auto shut-off and fast boiling.",
+    category: "Appliances",
+    brand: "BrewMate",
+    rating: 4.5,
+    price: 24.99,
+  },
+  {
+
+    name: "Laptop Stand",
+    image: "/images/stand.jpeg",
+    description: "Aluminum adjustable laptop stand for desk ergonomics.",
+    category: "Accessories",
+    brand: "DeskLift",
+    rating: 4.7,
+    price: 29.99,
+  },
+  {
+
+    name: "Noise-Cancelling Earbuds",
+    image: "/images/earbuds.jpeg",
+    description: "True wireless earbuds with active noise cancellation and mic.",
+    category: "Electronics",
+    brand: "QuietPods",
+    rating: 4.4,
+    price: 59.99,
+  },
+  {
+
+    name: "LED Desk Lamp",
+    image: "/images/lamp.jpeg",
+    description: "Touch control lamp with brightness settings and USB charging port.",
+    category: "Home",
+    brand: "BrightLite",
+    rating: 4.6,
+    price: 18.99,
+  },
+  {
+
+    name: "Virtual Reality Headset",
+    image: "/images/vr.jpeg",
+    description: "Immersive VR experience with motion tracking and wide FOV.",
+    category: "Gadgets",
+    brand: "Vision360",
+    rating: 4.2,
+    price: 219.99,
+  }
+];
+
+export default products;
+

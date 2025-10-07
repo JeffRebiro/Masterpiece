@@ -1,0 +1,63 @@
+/* C:\Users\Curti\Masterpiece\frontend\src\ProductCard.css */
+
+/* Style the Link container */
+.product-card-link {
+    text-decoration: none; /* Removes the default underline from the link */
+    color: inherit; /* Inherit the text color from the parent */
+}
+
+/* Overall card styling */
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; /* This is crucial for rounding the image corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+    height: 100%; /* Ensures all cards in the grid have the same height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover effect for a more interactive feel */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.product-image {
+    width: 100%;
+    height: 250px; /* Fixed height for consistent image size */
+    object-fit: none; /* Ensures the image fills the space without distortion */
+}
+
+/* Wrapper for text content */
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Allows this section to fill the remaining space */
+}
+
+/* Title styling */
+.card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+/* Rating area styling */
+.product-rating-area {
+    margin-bottom: 0.5rem;
+}
+
+/* Price styling */
+.card-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: auto; /* Pushes the price to the bottom of the card body */
+}

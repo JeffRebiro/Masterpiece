@@ -1,0 +1,17 @@
+/* src/components/screens/Rating.css */
+
+.rating-container {
+    display: flex; /* Use flexbox to align stars horizontally */
+    align-items: center; /* Vertically center the stars and text */
+    gap: 0.2rem; /* Small space between stars */
+}
+
+.rating-container svg {
+    font-size: 1rem; /* Adjust star icon size as needed */
+}
+
+.rating-text {
+    margin-left: 0.5rem; /* Space between the last star and the text */
+    font-size: 0.8rem; /* Adjust text size */
+    color: #333; /* Darker color for the text */
+}

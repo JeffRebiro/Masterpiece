@@ -1,0 +1,120 @@
+/* Container */
+.order-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+}
+
+/* Title */
+.order-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+/* Grid Layout */
+.order-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+/* Card Styling */
+.order-box {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 1.75rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.order-box:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.order-box h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+/* Items */
+.order-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.order-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.order-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Status Tags */
+.status {
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.delivered {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.not-delivered {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.paid {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+}
+
+.not-paid {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Summary */
+.total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: #111827;
+}
+
+/* PayPal Section */
+.order-right .order-box:last-child {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .order-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-title {
+    font-size: 2rem;
+  }
+}
