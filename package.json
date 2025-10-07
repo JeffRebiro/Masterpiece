@@ -1,7 +1,7 @@
 {
   "name": "masterpiece",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "nodemon backend/server.js",
     "start": "node backend/server.js",
