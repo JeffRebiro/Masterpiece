@@ -7,7 +7,7 @@
     "client": "cd frontend && npm run dev",
     "server": "node server.js",
     "dev": "nodemon server.js",
-    "build": "vite build",
+    "build": "npx vite build",
     "lint": "eslint .",
     "dev:full": "concurrently \"npm run dev\" \"npm run client\""
   },
