@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import OrderScreen from "./components/screens/orderScreen";
+import OrderScreen from "./components/screens/OrderScreen";
 import PlaceOrderScreen from "./components/screens/PlaceOrderScreen";
 import PaymentScreen from "./components/screens/PaymentScreen";
 import LoginScreen from "./components/screens/LoginScreen";
