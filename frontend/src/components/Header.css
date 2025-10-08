@@ -1,5 +1,3 @@
-/* Header.css */
-
 /* NAVBAR CONTAINER */
 .header {
   width: 100%;
@@ -64,6 +62,17 @@
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    position: absolute;
+    right: 24px;
+    top: 20px;
+    z-index: 1001;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  .logo {
+    margin-left: 0;
+    font-size: 1.2rem;
   }
 
   .nav {
@@ -75,11 +84,31 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+    gap: 1rem;
     display: none;
   }
 
   .nav.show {
     display: flex;
+  }
+}
+
+/* EXTRA SMALL SCREENS */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .dropdown-btn {
+    font-size: 0.95rem;
+  }
+
+  .dropdown-item {
+    font-size: 0.9rem;
   }
 }
 
@@ -135,3 +164,7 @@
   background: #4a5568;
 }
 
+/* GLOBAL FIX */
+body {
+  overflow-x: hidden;
+}
