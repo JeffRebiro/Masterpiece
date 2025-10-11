@@ -1,8 +1,11 @@
 /* Container styling */
 .container {
-  width: 100%;           /* Full width of viewport */
-  margin: 0;             /* Remove auto-centering */
-  padding: 2rem;         /* Optional: adjust for spacing */
+  width: 100%;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
 }
 
 /* Title styling */
@@ -17,9 +20,11 @@
 /* Grid layout: responsive columns */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   width: 100%;
+  max-width: 1200px;         /* Prevent grid from stretching too wide */
+  justify-content: center;   /* Center grid items when fewer columns */
 }
 
 /* Individual product card */
@@ -32,7 +37,7 @@
   transition: transform 0.2s ease;
   width: 100%;
   max-width: 100%;
-  margin: 0;              /* Ensure no extra spacing */
+  margin: 0;
 }
 
 .product-card:hover {
@@ -61,12 +66,21 @@
   .container {
     padding: 1.5rem;
   }
+
+  .product-grid {
+    max-width: 100%;
+  }
 }
 
 /* Responsive: Mobile view */
 @media (max-width: 576px) {
   .container {
     padding: 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
 
   .product-card img {
