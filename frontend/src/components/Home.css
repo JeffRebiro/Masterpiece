@@ -1,11 +1,13 @@
 /* Container styling */
 .container {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
 /* Title styling */
@@ -15,6 +17,14 @@
   text-align: center;
   color: #333;
   font-weight: 600;
+}
+
+/* Vertical scroll wrapper */
+.vertical-scroll-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* Grid layout: fixed columns on desktop */
@@ -37,6 +47,10 @@
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-card:hover {
@@ -53,11 +67,19 @@
   margin: 0 auto;
 }
 
-/* Loading state */
-.loading {
+/* Loading and error states */
+.loading, .error {
   text-align: center;
   padding: 2rem;
   color: #666;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: red;
 }
 
 /* Responsive: Tablet view */
@@ -76,6 +98,7 @@
 @media (max-width: 576px) {
   .product-grid {
     grid-template-columns: 1fr;
+    max-width: 400px; /* Limit width on mobile for better centering */
   }
 
   .container {
@@ -85,4 +108,12 @@
   .product-card img {
     max-height: 250px;
   }
+}
+
+/* Additional centering for empty states */
+.container > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
