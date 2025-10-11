@@ -1,13 +1,14 @@
 /* Container styling */
 .container {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 72px); /* Account for header height */
   margin: 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  box-sizing: border-box;
 }
 
 /* Title styling */
@@ -25,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex: 1;
 }
 
 /* Grid layout: fixed columns on desktop */
@@ -49,8 +51,6 @@
   transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .product-card:hover {
@@ -76,6 +76,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
 .error {
@@ -98,11 +99,12 @@
 @media (max-width: 576px) {
   .product-grid {
     grid-template-columns: 1fr;
-    max-width: 400px; /* Limit width on mobile for better centering */
+    max-width: 400px;
   }
 
   .container {
     padding: 1rem;
+    min-height: calc(100vh - 72px);
   }
 
   .product-card img {
@@ -110,10 +112,7 @@
   }
 }
 
-/* Additional centering for empty states */
-.container > div {
+/* Center the content properly */
+.container > * {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
