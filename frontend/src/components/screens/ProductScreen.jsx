@@ -108,7 +108,7 @@ const ProductScreen = () => {
                     borderRadius: '0.5rem',
                     padding: '1.5rem',
                     maxWidth: '500px',
-                    margin: '0 auto',
+                    margin: '0 auto 0 calc(50% - 240px)',
                     width: '100%'
                 }}>
                     <div style={{
