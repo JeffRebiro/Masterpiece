@@ -21,6 +21,16 @@
   gap: 1.5rem;
 }
 
+.product-card img {
+  width: 100%;          /* Image takes full width of card */
+  height: auto;         /* Height adjusts automatically */
+  object-fit: contain;  /* Show the whole image, no crop */
+  max-height: 300px;    /* Optional: prevents giant images */
+  display: block;
+  margin: 0 auto;       /* Center image inside card */
+}
+
+
 /* Individual product card */
 .product-card {
   border: 1px solid #eee;
