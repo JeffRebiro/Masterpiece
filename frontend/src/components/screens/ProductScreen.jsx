@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProductDetails } from "../../actions/productActions";
 import React from "react";
 import Rating from "../Rating";
+import './ProductScreen.css'; // Optional: you can use a separate CSS file
 
 const ProductScreen = () => {
     const { id } = useParams();
@@ -22,140 +23,83 @@ const ProductScreen = () => {
         navigate(`/cart/${id}?qty=${qty}`);
     };
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
+    if (loading) return <div className="loading">Loading...</div>;
+    if (error) return <div className="error">Error: {error}</div>;
     if (!product || Object.keys(product).length === 0) return <div>Product not found</div>;
 
     return (
-        <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="product-screen">
             {/* Back Button */}
-            <div style={{ marginBottom: '2rem' }}>
-                <Link
-                    to="/"
-                    style={{
-                        display: 'inline-block',
-                        padding: '0.5rem 1rem',
-                        background: '#f0f0f0',
-                        borderRadius: '0.25rem',
-                        textDecoration: 'none',
-                        color: '#333',
-                        fontWeight: '500'
-                    }}
-                >
+            <div className="back-button">
+                <Link to="/" className="back-link">
                     ← Go Back
                 </Link>
             </div>
 
             {/* Product Grid */}
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '2rem',
-                alignItems: 'start'
-            }}>
+            <div className="product-grid">
                 {/* Product Image */}
-                <div>
+                <div className="image-section">
                     <img
                         src={product.image}
                         alt={product.name}
-                        style={{
-                            width: '100%',
-                            borderRadius: '0.5rem',
-                            objectFit: 'contain',
-                            maxHeight: '500px'
-                        }}
+                        className="product-image"
                     />
                 </div>
 
                 {/* Product Info */}
-                <div>
-                    <p style={{ color: '#666', marginBottom: '0.5rem' }}>{product.brand}</p>
-                    <h1 style={{ fontSize: '2rem', margin: '0 0 1rem' }}>{product.name}</h1>
-                    <Rating value={product.rating} />
-                    <p style={{
-                        fontSize: '1.5rem',
-                        color: '#2c7a7b',
-                        fontWeight: 'bold',
-                        margin: '1.5rem 0'
-                    }}>
-                        ${product.price}
-                    </p>
-                    <p style={{ lineHeight: '1.6' }}>{product.description}</p>
+                <div className="info-section">
+                    <p className="product-brand">{product.brand}</p>
+                    <h1 className="product-name">{product.name}</h1>
+                    <div className="rating-section">
+                        <Rating value={product.rating} />
+                        <span className="rating-text">({product.numReviews} reviews)</span>
+                    </div>
+                    <p className="product-description">{product.description}</p>
                 </div>
 
                 {/* Purchase Box */}
-                <div style={{
-                    border: '1px solid #e2e8f0',
-                    borderRadius: '0.5rem',
-                    padding: '1.5rem'
-                }}>
-                    <div style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        padding: '0.5rem 0',
-                        borderBottom: '1px solid #eee'
-                    }}>
-                        <span>Price:</span>
-                        <span style={{ fontWeight: 'bold' }}>${product.price}</span>
+                <div className="purchase-section">
+                    <div className="price-box">
+                        <span className="price-label">Price:</span>
+                        <span className="price-value">${product.price}</span>
                     </div>
 
-                    <div style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        padding: '0.5rem 0',
-                        borderBottom: '1px solid #eee'
-                    }}>
-                        <span>Quantity:</span>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div className="quantity-box">
+                        <span className="quantity-label">Quantity:</span>
+                        <div className="quantity-controls">
                             <button
                                 onClick={() => setQty((prev) => Math.max(1, prev - 1))}
-                                style={{
-                                    padding: '0.5rem 1rem',
-                                    fontSize: '1rem',
-                                    background: '#edf2f7',
-                                    border: '1px solid #ccc',
-                                    borderRadius: '0.25rem',
-                                    cursor: 'pointer'
-                                }}
+                                className="quantity-btn"
                             >
                                 −
                             </button>
-                            <span style={{ minWidth: '2rem', textAlign: 'center' }}>{qty}</span>
+                            <span className="quantity-display">{qty}</span>
                             <button
                                 onClick={() => setQty((prev) => Math.min(10, prev + 1))}
-                                style={{
-                                    padding: '0.5rem 1rem',
-                                    fontSize: '1rem',
-                                    background: '#edf2f7',
-                                    border: '1px solid #ccc',
-                                    borderRadius: '0.25rem',
-                                    cursor: 'pointer'
-                                }}
+                                className="quantity-btn"
                             >
                                 +
                             </button>
                         </div>
-                        <span style={{ fontWeight: 'bold', marginLeft: '10px' }}>
+                        <span className="subtotal">
                             ${(product.price * qty).toFixed(2)}
                         </span>
                     </div>
 
-                    <button onClick={addToCartHandler} style={{
-                        width: '100%',
-                        background: '#2c7a7b',
-                        color: 'white',
-                        padding: '0.75rem',
-                        marginTop: '1.5rem',
-                        border: 'none',
-                        borderRadius: '0.25rem',
-                        fontSize: '1rem',
-                        cursor: 'pointer',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
-                    }}>
-                        Add to Cart
+                    <button 
+                        onClick={addToCartHandler} 
+                        className="add-to-cart-btn"
+                        disabled={product.countInStock === 0}
+                    >
+                        {product.countInStock === 0 ? 'Out of Stock' : 'Add to Cart'}
                     </button>
+                    
+                    {product.countInStock > 0 && (
+                        <div className="stock-info">
+                            In Stock: {product.countInStock} units
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
